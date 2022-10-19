@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 
 class CartItemViews(APIView):
     def post(self, request):
+        print(request.data)
         serializer = CartItemSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
